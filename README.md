@@ -1,8 +1,11 @@
-# Welcome to your CDK TypeScript project!
+# CDK S3 Thumbnail
 
-This is a blank project for TypeScript development with CDK.
+The [Using AWS Lambda with Amazon S3](https://docs.aws.amazon.com/lambda/latest/dg/with-s3-example.html)
+tutorial done with AWS CDK.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+Uses the `NodejsFunction` to bundle the Lambda code:
+* `aws-sdk` is not included in the bundle
+* `sharp`, which uses native dependencies, is installed in the `node_modules` folder
 
 ## Useful commands
 
