@@ -13,7 +13,9 @@ export class CdkS3ThumbnailStack extends cdk.Stack {
     const handler = new lambda.NodejsFunction(this, 'resizer', {
       timeout: cdk.Duration.seconds(30),
       memorySize: 1024,
-      nodeModules: ['sharp'],
+      bundling: {
+        nodeModules: ['sharp'],
+      }
     });
 
     sourceBucket.addObjectCreatedNotification(new s3n.LambdaDestination(handler));
